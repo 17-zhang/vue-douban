@@ -13,7 +13,40 @@
 </template>
 
 <script type="text/ecmascript-6">
-  export default {}
+  import Scroller from '../components/Scroller'
+  import Types from '../components/Types'
+  import DownloadApp from '../components/DownloadApp'
+  import { mapState } from 'vuex'
+
+  export default {
+    name: 'movie-view',
+    components: {
+      Scroller,
+      Types,
+      DownloadApp
+    },
+    data () {
+      return {}
+    },
+    computed: {
+      ...mapState({
+        hotMovies: state => state.movie.hotMovies,
+        topMovies: state => state.movie.topMovies,
+        newMovies: state => state.movie.newMovies,
+        movieTags: state => state.movie.movieTags
+      })
+    },
+    methods: {
+      getMovie: function () {
+        // Dispatch getMovie
+        this.$store.dispatch('getMovie')
+      }
+    },
+    created () {
+      // Getting movies data on created
+      this.getMovie()
+    }
+  }
 </script>
 
 <style scoped>
