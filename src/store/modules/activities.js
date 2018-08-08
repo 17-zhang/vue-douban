@@ -3,6 +3,7 @@
  * 内部依赖nodejs原生的请求api,适用于nodejs环境下.
  * */
 import request from 'superagent'
+import jsonp from 'superagent-jsonp'
 
 const state = {
   events: [],
@@ -30,7 +31,36 @@ const actions = {
    * */
   loadMore ({commit, state}) {
     request
-      .get()
+      .get('https://api.douban.com/v2/event/list?loc=108288&start=' + state.skip + '&count=3')
+      .use(jsonp)
+      .end((err, res) => {
+        if (!err) {
+          commit({
+            type: 'loadMore',
+            res: res.body.events
+          })
+        }
+      })
+  },
+  /**
+   * 捕捉单一事件
+   * id: event id
+   * */
+  getSingleEvent ({commit, state, payload}) {
+    return new Promise((resolve, reject) => {
+      request
+        .get('https://api.douban.com/v2/event/' + payload.id)
+        .use(jsonp)
+        .end((err, res) => {
+          if (!err) {
+            commit({
+              tyoe: 'getSingleEvent',
+              res: res.body
+            })
+            resolve(res)
+          }
+        })
+    })
   }
 }
 
