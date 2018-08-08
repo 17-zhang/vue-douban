@@ -3,9 +3,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-    export default {
-        name: "List"
-    }
+  export default {}
 </script>
 
 <style scoped>

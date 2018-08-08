@@ -1,7 +1,11 @@
 <template>
+  <!--首页-->
   <div class="home-view has-header">
+    <!--次级nav栏-->
     <sub-nav mold="quickNav"></sub-nav>
+    <!--文字列表-->
     <list mold="thumbnail" :item="events"></list>
+    <!--无线加载-->
     <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
       <loading slot="spinner"></loading>
     </infinite-loading>
@@ -10,7 +14,7 @@
 
 <script type="text/ecmascript-6">
   import { mapState, mapActions } from 'vuex'
-
+  // vue-infinite-loading：无线滚动插件
   import InfiniteLoading from 'vue-infinite-loading'
   import SubNav from '../components/SubNav'
   import List from '../components/List'
