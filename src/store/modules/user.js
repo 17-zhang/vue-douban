@@ -10,6 +10,7 @@ const state = {
 }
 
 const getters = {
+  // 过滤 currentUser
   currentUser: state => {
     return {
       email: state.login_email,
@@ -20,7 +21,7 @@ const getters = {
 }
 
 const mutations = {
-  updateDate (state, payload) {
+  updateData (state, payload) {
     switch (payload.name) {
       case 'email':
         state.temp_email = payload.value
@@ -63,7 +64,7 @@ const actions = {
    * email: payload.email
    * pass: payload.pass
    * name: payload.name
-   * */
+   */
   login ({ commit }, payload) {
     return new Promise((resolve, reject) => {
       request
@@ -123,4 +124,3 @@ export default {
   mutations,
   actions
 }
-

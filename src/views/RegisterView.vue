@@ -1,18 +1,20 @@
 <template>
-  <div class="register-view">
+  <div>
     <!--判断是否注册成功-->
-    <template v-if="isComplate">
+    <template v-if="isComplete">
       <h1 class="title">注册成功</h1>
       <form method="post" onsubmit="return false">
         <p class="tip">请复制一下Token进行登录</p>
         <div class="form-alias">
           <label>
             <strong>token</strong>
-            <input type="text" v-model="token" name="token" placeholder="token">
+            <input type="text"
+                   v-model="token" name="token" placeholder="token">
           </label>
         </div>
         <div class="form-submit">
-          <router-link class="submit" :to="{ name: 'LoginView' }" tag="button">去登录</router-link>
+          <router-link class="submit" :to="{ name: 'LoginView' }"
+                       tag="button">去登录</router-link>
         </div>
       </form>
     </template>
@@ -44,7 +46,8 @@
           </label>
         </div>
         <div class="form-submit">
-          <button class="submit" type="submit" :disabled="isDisabled" :class="disabled: isDisabled)">{{registerState}}
+          <button class="submit" type="submit" :disabled="isDisabled"
+                  :class="{disabled: isDisabled}">{{registerState}}
           </button>
         </div>
       </form>
@@ -84,9 +87,9 @@
       // 提交之前
       beforeSubmit: function () {
         this.isDisabled = true
-        this.registerState = "正在提交..."
+        this.registerState = '正在提交...'
       },
-      onSuccess: function () {
+      onSuccess: function (res) {
         this.isComplete = true
         this.token = res.body.token
       },

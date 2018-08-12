@@ -4,6 +4,10 @@ import Router from 'vue-router'
 import PagesView from '../views/PagesView'
 import HomeView from '../views/HomeView'
 import MovieView from '../views/MovieView'
+import LoginView from '../views/LoginView'
+import RegisterView from '../views/RegisterView'
+import BookView from '../views/BookView'
+import StatusView from '../views/StatusView'
 
 Vue.use(Router)
 
@@ -11,7 +15,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/pages/'
+      redirect: '/pages'
     },
     {
       path: '/pages',
@@ -30,8 +34,33 @@ export default new Router({
           path: 'movie',
           name: 'MovieView',
           component: MovieView
+        },
+        {
+          path: 'book',
+          name: 'BookView',
+          component: BookView
+        },
+        {
+          path: 'status',
+          name: 'StatusView',
+          component: StatusView
+        },
+        {
+          path: 'group',
+          name: 'GroupView',
+          component: GroupView
         }
       ]
+    },
+    {
+      path: 'login',
+      name: 'LoginView',
+      component: LoginView
+    },
+    {
+      path: 'register',
+      name: 'RegisterView',
+      component: RegisterView
     }
   ]
 })

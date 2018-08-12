@@ -78,5 +78,4 @@
   .average {
     padding-right: 0.8rem;
   }
-
 </style>
