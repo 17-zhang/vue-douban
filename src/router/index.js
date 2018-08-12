@@ -8,6 +8,7 @@ import LoginView from '../views/LoginView'
 import RegisterView from '../views/RegisterView'
 import BookView from '../views/BookView'
 import StatusView from '../views/StatusView'
+import GroupView from '../views/GroupView'
 
 Vue.use(Router)
 
@@ -15,7 +16,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/pages'
+      redirect: '/pages/'
     },
     {
       path: '/pages',

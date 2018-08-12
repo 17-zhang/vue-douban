@@ -26,7 +26,9 @@
       DownloadApp
     },
     data () {
-      return {}
+      return {
+
+      }
     },
     computed: {
       ...mapState({

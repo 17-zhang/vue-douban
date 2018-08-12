@@ -18,7 +18,7 @@
     data () {
       return {
         baseUri: 'https://m.douban.com/',
-        item: [
+        items: [
           {
             title: '经典',
             href: 'movie/classic'
