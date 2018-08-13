@@ -4,7 +4,7 @@
     <!--次级nav栏-->
     <sub-nav mold="quickNav"></sub-nav>
     <!--文字列表-->
-    <list mold="thumbnail" :item="events"></list>
+    <list mold="thumbnail" :items="events"></list>
     <!--无线加载-->
     <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
       <loading slot="spinner"></loading>
@@ -39,18 +39,16 @@
       })
     },
     methods: {
-      // 使用vue-infinite-loading插件
+      // Using vue-infinite-loading
       onInfinite () {
         setTimeout(() => {
           this.loadMore()
-          // setTimeout()事件触发后，自动触发infiniteLoading事件。
-          // vm.$emit()：触发当前事件
           this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
         }, 1000)
       },
-      // 使用 mapActions 辅助函数将组件的 methods 映射为 store.dispatch 调用（需要先在根节点注入 store）
+      // Dispatching Actions
       ...mapActions([
-        'loadingMore'
+        'loadMore'
       ])
     }
   }

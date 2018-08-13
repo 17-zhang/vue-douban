@@ -1,14 +1,14 @@
 <template>
   <div class="list">
     <template v-if="mold === 'thumbnail'" v-for="item in items">
-      <router-link class="thumbnail" :to="{name: 'DetailView', params: { id: item.id }}">
-        <!--文字内容栏-->
+      <router-link
+        class="thumbnail"
+        :to="{name: 'DetailView', params: { id: item.id }}">
         <div class="content">
           <img :src="item.image_hlarge" alt="cover">
           <h3>{{item.title}}</h3>
           <p>{{item.content | subStr}}</p>
         </div>
-        <!--作者栏-->
         <div class="author">
           <span class="name">{{item.category_name}}</span>
           <span class="label" v-if="item.subcategory_name">
@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   export default {
     name: 'list',
     props: {
@@ -44,28 +44,25 @@
       }
     },
     data () {
-      return {}
+      return {
+      }
     },
-    // filters:过滤器
     filters: {
-      substr: function (value) {
-        // replace(/<.*?>/g):找到所有的<>的标签，都替换为空格
+      subStr: function (value) {
         let newVal = value.replace(/<.*?>/g, '')
-        // slice(start,end)：选取数组，并组成新数组
         return newVal.slice(0, 30)
       }
     }
-
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
   .list {
     .thumbnail {
       position: relative;
       display: block;
       padding: 2.5rem 1.8rem 2.5rem 0;
-      margin-left: 1rem;
+      margin-left: 1.8rem;
 
       .content {
         overflow: hidden;
@@ -76,7 +73,7 @@
         margin-top: 0;
         margin-bottom: 0.6rem;
         line-height: 1.41;
-        text-align: justify;  /* 实现两端对齐文本效果 */
+        text-align: justify;
         font-size: 1.7rem;
         font-weight: 500;
         color: #494949;
@@ -108,7 +105,7 @@
         right: 1.8rem;
       }
     }
-    /* ~ ：跟在后面 */
+
     .thumbnail ~ .thumbnail::before {
       position: absolute;
       left: 0;
@@ -129,7 +126,7 @@
       }
 
       .info {
-        margin-right: 0.5rem;
+        margin-top: 0.5rem;
         font-size: 1.4rem;
         color: #42bd56;
       }

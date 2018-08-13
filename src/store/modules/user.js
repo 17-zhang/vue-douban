@@ -74,11 +74,10 @@ const mutations = {
   }
 }
 
-
 /**
  * actions：既然mutations只能处理同步函数,那actions是处理异步函数。
  *
- * 　actions和mutations的区别：
+ * actions和mutations的区别：
  *    1.Actions 提交的是 mutations，而不是直接变更状态。也就是说，actions会通过mutations，让mutations帮他提交数据的变更。
  *    2.Action 可以包含任意异步操作。ajax、setTimeout、setInterval不在话下
  */
