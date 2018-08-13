@@ -20,7 +20,7 @@
   }
 </script>
 
-<style scoped>
+<style class="scss" scoped>
   .download-app {
     padding: 0 0 2rem 0;
     margin-top: 5rem;

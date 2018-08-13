@@ -23,7 +23,11 @@
 
   export default {
     name: 'group-view',
-    components: { UserBar, Group, DownloadApp },
+    components: {
+      UserBar,
+      Group,
+      DownloadApp
+    },
     data () {
       return {}
     },

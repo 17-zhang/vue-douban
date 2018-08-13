@@ -10,10 +10,10 @@
       <group title="影视" :items="queryRes_movie">
         <a href="#" class="list-link" slot="more">查看更多影视结果</a>
       </group>
-      <group title="图书" :items="queryRes_movie">
+      <group title="图书" :items="queryRes_book">
         <a href="#" class="list-link" slot="more">查看更多图书结果</a>
       </group>
-      <group title="音乐" :items="queryRes_movie">
+      <group title="音乐" :items="queryRes_music">
         <a href="#" class="list-link" slot="more">查看更多音乐结果</a>
       </group>
     </div>

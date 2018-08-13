@@ -46,7 +46,7 @@ const actions = {
    * 捕捉单一事件
    * id: event id
    * */
-  getSingleEvent ({commit, state, payload}) {
+  getSingleEvent ({commit, state}, payload) {
     return new Promise((resolve, reject) => {
       request
         .get('https://api.douban.com/v2/event/' + payload.id)

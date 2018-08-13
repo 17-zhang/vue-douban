@@ -148,15 +148,15 @@
 
   ul {
     display: flex;
-    justify-content: space-around; /*各行之前、之间、之后都留有空白*/
+    justify-content: space-around;
     padding-top: 2.5rem;
 
     li {
-      width: 33.333%;
+      width: 33.33%;
     }
 
     div {
-      position: absolute;
+      position: relative;
       float: left;
       left: 50%;
       top: 0;

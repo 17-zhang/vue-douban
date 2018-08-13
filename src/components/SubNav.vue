@@ -42,7 +42,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {mapGetters} from 'vuex'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'sub-nav',
@@ -111,7 +111,6 @@
   }
 
   .quickNav {
-
     ul {
       overflow: hidden;
       margin: 1rem 0 0 0;
@@ -137,7 +136,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        white-space: normal;
+        word-wrap: normal;
       }
     }
   }

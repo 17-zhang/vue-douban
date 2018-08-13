@@ -9,6 +9,9 @@ import RegisterView from '../views/RegisterView'
 import BookView from '../views/BookView'
 import StatusView from '../views/StatusView'
 import GroupView from '../views/GroupView'
+import SubjectView from '../views/SubjectView'
+import DetailView from '../views/DetailView'
+import SearchView from '../views/SearchView'
 
 Vue.use(Router)
 
@@ -50,6 +53,11 @@ export default new Router({
           path: 'group',
           name: 'GroupView',
           component: GroupView
+        },
+        {
+          path: 'detail',
+          name: 'DetailView',
+          component: DetailView
         }
       ]
     },
@@ -62,6 +70,23 @@ export default new Router({
       path: 'register',
       name: 'RegisterView',
       component: RegisterView
+    },
+    {
+      path: '/search',
+      name: 'SearchView',
+      components: {
+        default: PagesView,
+        search: SearchView
+      }
+    },
+    {
+      path: 'subject',
+      name: 'SubjectView',
+      component: SubjectView
+    },
+    {
+      path: '*',
+      redirect: '/pages/'
     }
   ]
 })

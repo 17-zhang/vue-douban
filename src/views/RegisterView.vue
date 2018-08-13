@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="register-view">
     <!--判断是否注册成功-->
     <template v-if="isComplete">
       <h1 class="title">注册成功</h1>
