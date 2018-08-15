@@ -68,9 +68,10 @@
         showLoading: true
       }
     },
+    // 过滤器
     filters: {
       toArray (value) {
-        return value.split(',')
+        return value.split(',')  // 字符串分割成字符串数组
       }
     },
     computed: {

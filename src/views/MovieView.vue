@@ -31,6 +31,7 @@
       }
     },
     computed: {
+      // 从store/modules/movie中获取
       ...mapState({
         hotMovies: state => state.movie.hotMovies,
         topMovies: state => state.movie.topMovies,

@@ -1,5 +1,5 @@
 # vue-douban
-模仿豆瓣APP
+模仿豆瓣APP，技术栈：Vue2.x + Vuex + Vue-router + Superagent
 
 ## 依赖包[SuperAgent](https://www.jianshu.com/p/191d1e21f7ed)
 

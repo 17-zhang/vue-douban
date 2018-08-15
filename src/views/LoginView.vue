@@ -1,8 +1,10 @@
 <template>
   <div class="login-view">
     <h1>
+      <!--javascript:history.go(-1):后退一页-->
       <a href="javascript:history.go(-1);">取消</a>登录豆瓣
     </h1>
+    <!--@submit.prevent-->
     <form method="get" @submit.prevent="onSubmit()">
       <p v-if="error" class="tip error">{{error}}</p>
       <!--用户名-->

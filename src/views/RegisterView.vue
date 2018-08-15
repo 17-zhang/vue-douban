@@ -21,6 +21,7 @@
     <!--尚未注册，填写下面表单-->
     <template v-else>
       <h1 class="title">欢迎加入豆瓣</h1>
+      <!-- @submit.prevent：提交事件不再重载页面 -->
       <form method="post" @submit.prevent="onSubmit()">
         <p v-if="error" class="tip error">{{error}}</p>
         <div class="form-alias">

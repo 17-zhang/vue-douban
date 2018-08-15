@@ -1,7 +1,10 @@
 <template>
   <div class="movie-view has-header">
+    <!--滚动项一-->
     <scroller title="最受关注图书｜虚构类" type="hasCover" :items="novel"></scroller>
+    <!--滚动项二-->
     <scroller title="最受关注图书｜非虚构类" type="hasCover" :items="reality"></scroller>
+    <!--滚动项三-->
     <scroller title="豆瓣纸书" type="hasCover" :items="travel">
       <div class="promItem" slot="promItem">
         <img class="corver" src="../assets/book_zw.jpg" alt="">
@@ -12,8 +15,11 @@
         </div>
       </div>
     </scroller>
+    <!--滚动项四-->
     <scroller title="发现好书" type="onlyString" :items="bookTags"></scroller>
+    <!--分类-->
     <types></types>
+    <!--下载App-->
     <download-app></download-app>
   </div>
 </template>
@@ -27,7 +33,11 @@
 
   export default {
     name: 'book-view',
-    components: { Scroller, Types, DownloadApp },
+    components: {
+      Scroller,
+      Types,
+      DownloadApp
+    },
     data () {
       return {}
     },
