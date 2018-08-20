@@ -4,12 +4,15 @@
       <span>暂无评分</span>
     </template>
     <template v-else>
+      <!--满星-->
       <template v-for="n in full">
         <span class="star-full"></span>
       </template>
+      <!--半星-->
       <template v-for="n in half">
         <span class="star-half"></span>
       </template>
+      <!--灰色星-->
       <template v-for="n in gray">
         <span class="star-gray"></span>
       </template>
@@ -37,7 +40,7 @@
     },
     created () {
       let average = this.rating.average
-      this.full = parseInt(average / 2)
+      this.full = parseInt(average / 2)  // full返回一个整数
       this.half = average % 2 === 0 ? 0 : 1
       this.gray = 5 - this.full - this.half
     }

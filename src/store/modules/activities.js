@@ -54,7 +54,7 @@ const actions = {
         .end((err, res) => {
           if (!err) {
             commit({
-              tyoe: 'getSingleEvent',
+              type: 'getSingleEvent',
               res: res.body
             })
             resolve(res)

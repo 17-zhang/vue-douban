@@ -1,14 +1,17 @@
 <template>
   <div class="list">
     <template v-if="mold === 'thumbnail'" v-for="item in items">
+      <!--跳转到DetailView-->
       <router-link
         class="thumbnail"
         :to="{name: 'DetailView', params: { id: item.id }}">
+        <!--内容-->
         <div class="content">
           <img :src="item.image_hlarge" alt="cover">
           <h3>{{item.title}}</h3>
           <p>{{item.content | subStr}}</p>
         </div>
+        <!--作者-->
         <div class="author">
           <span class="name">{{item.category_name}}</span>
           <span class="label" v-if="item.subcategory_name">
@@ -44,9 +47,9 @@
       }
     },
     data () {
-      return {
-      }
+      return {}
     },
+    // 过滤
     filters: {
       subStr: function (value) {
         let newVal = value.replace(/<.*?>/g, '')
@@ -81,7 +84,7 @@
 
       p {
         line-height: 1.5;
-        text-align: justify;
+        text-align: justify;  /* 文本两端对齐 */
         color: #aaa;
         font-size: 1.2rem;
         overflow: hidden;

@@ -124,7 +124,7 @@
         color: #42bd56;
       }
     }
-
+    /* li的偶数 padding-left: 1.8rem; */
     li:nth-child(2n) {
       padding-left: 1.8rem;
     }

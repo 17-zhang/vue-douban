@@ -12,6 +12,7 @@
       </form>
     </div>
     <ul class="has-header">
+      <!--列1-->
       <li>
         <div>
           <a href="#" target="_blank">
@@ -32,6 +33,7 @@
           </a>
         </div>
       </li>
+      <!--列2-->
       <li>
         <div>
           <a href="#" target="_blank">
@@ -52,6 +54,7 @@
           </a>
         </div>
       </li>
+      <!--列3-->
       <li>
         <div>
           <a href="#" target="_blank">
@@ -99,7 +102,7 @@
        * */
       goSearch: function () {
         this.$emit('closeTalion')
-        this.$router.push({
+        this.$router.push({  // 导航跳转到searchview组件
           name: 'SearchView',
           params: {
             q: this.queryStr
@@ -148,7 +151,7 @@
 
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around;  /* 容器在各行之前、之间、之后都留有空白。 */
     padding-top: 2.5rem;
 
     li {

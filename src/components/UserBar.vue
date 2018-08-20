@@ -1,6 +1,7 @@
 <template>
   <router-link class="user-bar" :to="{ name: currentLink}" tag="div">
     <div class="avatar">
+      <!--判断用户是否登录-->
       <template v-if="currentUser.name">
         <img src="../assets/avatar.png" alt="avatar">
       </template>
@@ -33,7 +34,7 @@
       ...mapGetters(['currentUser'])
     },
     created () {
-      // Get local user filling store/user
+      // 获取本地用户填写的数据 store/user
       if (localStorage.getItem('email')) {
         this.$store.commit({
           type: 'getLocalUser'

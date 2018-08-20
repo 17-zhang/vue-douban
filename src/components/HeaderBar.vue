@@ -29,7 +29,7 @@
     },
     methods: {
       showTalian: function () {
-        this.$emit('showTalion')
+        this.$emit('showTalion')  // $emit:触发当前实例上的事件
       }
     }
   }

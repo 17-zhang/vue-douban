@@ -10,6 +10,7 @@
       <slot name="promItem"></slot>
       <ul class="hasCover" v-if="type === 'hasCover'">
         <li v-for="item in items">
+          <!--append:当前路径前添加基路径-->
           <router-link :to="'subject/' + item.id" append>
             <img v-if="item.images" :src="item.images.large" alt="">
             <span class="title">{{item.title}}</span>

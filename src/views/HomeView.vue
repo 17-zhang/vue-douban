@@ -1,11 +1,11 @@
 <template>
   <!--首页-->
   <div class="home-view has-header">
-    <!--次级nav栏-->
+    <!--sub-nav组件-->
     <sub-nav mold="quickNav"></sub-nav>
-    <!--文字列表-->
+    <!--内容list组件-->
     <list mold="thumbnail" :items="events"></list>
-    <!--无线加载-->
+    <!--无线加载组件-->
     <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
       <loading slot="spinner"></loading>
     </infinite-loading>
@@ -39,7 +39,7 @@
       })
     },
     methods: {
-      // Using vue-infinite-loading
+      // 使用 vue-infinite-loading插件
       onInfinite () {
         setTimeout(() => {
           this.loadMore()

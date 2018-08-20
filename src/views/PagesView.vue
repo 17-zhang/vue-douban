@@ -2,6 +2,7 @@
   <div class="pages-view">
     <!--@showTalion="open"：绑定Talion打开事件-->
     <header-bar @showTalion="open"></header-bar>
+    <!--<router-view>:渲染路径匹配到的视图组件-->
     <router-view></router-view>
     <!--@closeTalion="close"：绑定Talion关闭事件-->
     <talion-view v-show="talion" @closeTalion="close"></talion-view>
