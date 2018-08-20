@@ -5,20 +5,61 @@
 
 - superagent 是一个轻量的,渐进式的ajax api,可读性好,学习曲线低,内部依赖nodejs原生的请求api,适用于nodejs环境下.
 
-(```)
- request
-    .post('/api/pet')
-    .send({ name: 'Manny', species: 'cat' })
-    .set('X-API-Key', 'foobar')
-    .set('Accept', 'application/json')
-    .end(function(res){
-      if (res.ok) {
-        alert('yay got ' + JSON.stringify(res.body));
-      } else {
-        alert('Oh no! error ' + res.text);
-      }
-    });
-(```)
+```
+  request
+      .post('/api/pet')
+      .send({ name: 'Manny', species: 'cat' })
+      .set('X-API-Key', 'foobar')
+      .set('Accept', 'application/json')
+      .end(function(res){
+        if (res.ok) {
+          alert('yay got ' + JSON.stringify(res.body));
+        } else {
+          alert('Oh no! error ' + res.text);
+        }
+      });
+```
+## 无限加载滚动插件[vue-infinite-loading](https://www.jianshu.com/p/bfb5ca56b4fb)
+
+### 特点
+- 移动端支持友好
+- 兼容任何一个可以滚动的元素
+- 有不同的旋转器可以作为加载动画
+- 支持加载后显示结果
+- 支持两个方向的无限加载
+
+### 安装
+
+` npm install vue-infinite-loading --save `
+
+### 导入方式
+
+#### es6模块导入方式
+
+```
+  import InfiniteLoading from 'vue-infinite-loading';
+  export default {
+    components: {
+      InfiniteLoading,
+    },
+  };
+
+```
+#### CommonJS 模块导入方式
+
+```
+  const InfiniteLoading = require('vue-infinite-loading');
+  export default {
+    components: {
+        InfiniteLoading,
+    },
+  };
+```
+#### 其他方式
+
+` <script src="/path/to/vue-infinite-loading/dist/vue-infinite-loading.js"></script> `
+
+
 
 ## Vuex的理解，来源[vue--vuex详解](https://www.cnblogs.com/first-time/p/6815036.html)
 
@@ -50,3 +91,4 @@
 2. action只管中间处理，处理完我就给你，你怎么存我不管；
 3. Getter 我只管取，我不改的。
 4. action放在了 methods 里面，说明我们应该把它当成函数来用（讲道理，钩子函数也应该可以的） mutation是写在store里面的，这说明，它就是个半成品，中间量，我们不应该在外面去操作它。getter写在了 computed 里面，这说明虽然 getter我们写的是函数，但是我们应该把它当成计算属性来用。
+
