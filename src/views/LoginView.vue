@@ -108,8 +108,9 @@
         })
       }
     },
+    // 组件内独享的导航钩子
     beforeRouteEnter (to, form, next) {
-      next(vm => {
+      next(vm => {  // 通过 vm 访问组件实例
         if (vm.$store.getters.currentUser.email) {
           // 重新定向新的URL->StatusView
           vm.$router.push({name: 'StatusView'})
@@ -118,6 +119,7 @@
         }
       })
     },
+    // 创建后
     created () {
       // 获取用户本地存储的email值
       if (localStorage.getItem('email')) {
